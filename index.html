@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="Portfolio de Franco Arteta - Desarrollador Backend & Infraestructura IT">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
   <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
@@ -18,65 +18,58 @@
   <script>document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
   <script src="js/vendor/jquery.hashchange.min.js"></script>
   <script src="js/vendor/jquery.easytabs.min.js"></script>
-  <script src="js/main.js"></script>
+  
+  <script>
+    function setLang(lang) {
+      document.body.className = document.body.className.replace(/\blang-(es|en)\b/g, '');
+      document.body.classList.add('lang-' + lang);
+    }
+  </script>
 
   <style>
-    /* Ocultar el idioma inactivo */
+    /* Ocultar idioma inactivo */
     .lang-en .es { display: none !important; }
     .lang-es .en { display: none !important; }
     
-    /* Hacer que la caja blanca sea la referencia para las banderas */
-    #tab-data-wrap { position: relative; }
+    /* Configuración de la caja blanca principal */
+    #tab-data-wrap { position: relative; padding-top: 60px; }
     
-    /* Selector de Idioma reubicado */
+    /* Selector de Idioma: Arriba a la Izquierda */
     .lang-switcher {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 15px;
+      left: 20px;
       z-index: 1000;
-      background-color: rgba(240, 240, 240, 0.8);
-      padding: 5px 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 10px;
     }
-    .lang-switcher button {
-      background: none;
-      border: none;
-      font-size: 22px;
+    .lang-switcher img {
+      width: 32px;
+      height: 22px;
       cursor: pointer;
-      margin: 0 5px;
-      transition: transform 0.2s;
+      border-radius: 3px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
     }
-    .lang-switcher button:hover { transform: scale(1.2); }
+    .lang-switcher img:hover { transform: scale(1.15); }
 
-    /* Fix para textos largos en las barras de habilidades */
-    .meter { height: 26px; }
-    .meter > span > span {
-      display: block;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      padding-right: 10px;
-      line-height: 1.5;
-    }
+    /* Habilidades Responsivas (Texto afuera de la barra) */
+    .skill-item { margin-bottom: 18px; }
+    .skill-title { margin: 0 0 5px 0; font-weight: bold; color: #444; font-size: 15px; }
+    .meter { height: 14px; margin-bottom: 0; background: #e0e0e0; border: none; }
+    .meter > span { border-radius: 4px; }
+    .meter > span > span { display: none; } /* Ocultamos el texto viejo de adentro */
 
     /* Botón Descargar CV */
     .btn-cv {
-      display: block;
-      background-color: #2E8B57;
-      color: white !important;
-      text-align: center;
-      padding: 12px;
-      margin-top: 15px;
-      border-radius: 4px;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
+      display: block; background-color: #2E8B57; color: white !important;
+      text-align: center; padding: 12px; margin-top: 15px; border-radius: 4px;
+      font-weight: bold; text-transform: uppercase; text-decoration: none;
       transition: background-color 0.3s;
     }
     .btn-cv:hover { background-color: #1f613c; }
 
-    /* --- Estilos para el Carrusel de Proyectos --- */
+    /* Carrusel de Proyectos */
     .slideshow-container { position: relative; margin: auto; overflow: hidden; border-radius: 5px 5px 0 0; }
     .mySlides1, .mySlides2, .mySlides3, .mySlides4 { display: none; }
     .prev, .next {
@@ -143,8 +136,8 @@
         <div id="tab-data-wrap">
           
           <div class="lang-switcher">
-            <button onclick="setLang('es')" title="Español">🇦🇷</button>
-            <button onclick="setLang('en')" title="English">🇺🇸</button>
+            <img src="./images/ar.png" onclick="setLang('es')" alt="Español" title="Español">
+            <img src="./images/us.png" onclick="setLang('en')" alt="English" title="English">
           </div>
 
           <div id="about">
@@ -172,12 +165,8 @@
                     <li><a href="#contact"><span class="es">Contactarme</span><span class="en">Contact Me</span></a></li>
                   </ul>
                   
-                  <a href="./CV_Franco_Arteta_Spanish.pdf" target="_blank" class="btn-cv es">
-                    Descargar CV
-                  </a>
-                  <a href="./CV_Franco_Arteta_English.pdf" target="_blank" class="btn-cv en">
-                    Download CV
-                  </a>
+                  <a href="./CV_Franco_Arteta_Spanish.pdf" target="_blank" class="btn-cv es">Descargar CV</a>
+                  <a href="./CV_Franco_Arteta_English.pdf" target="_blank" class="btn-cv en">Download CV</a>
 
                 </div>
               </div>
@@ -219,20 +208,50 @@
             <section class="clearfix">
               <div class="g2">
                 <h3><span class="es">Desarrollo Backend & Arquitectura</span><span class="en">Backend Dev & Architecture</span></h3>
-                <div class="meter emerald"><span style="width: 90%"><span>Java (Spring Boot, JPA/Hibernate, Microservicios)</span></span></div>
-                <div class="meter emerald"><span style="width: 85%"><span>Python (APIs, Automatización, Scripting)</span></span></div>
-                <div class="meter emerald"><span style="width: 85%"><span><span class="es">Bases de Datos (SQL, Modelado Relacional)</span><span class="en">Databases (SQL, Relational Modeling)</span></span></span></div>
-                <div class="meter emerald"><span style="width: 75%"><span><span class="es">Patrones de Diseño & Arquitectura</span><span class="en">Design Patterns & Architecture</span></span></span></div>
-                <div class="meter emerald"><span style="width: 65%"><span><span class="es">C++ & Estructuras de Datos</span><span class="en">C++ & Data Structures</span></span></span></div>
+                
+                <div class="skill-item">
+                  <p class="skill-title">Java (Spring Boot, JPA/Hibernate, Microservicios)</p>
+                  <div class="meter emerald"><span style="width: 90%"></span></div>
+                </div>
+                <div class="skill-item">
+                  <p class="skill-title">Python (APIs, Automatización, Scripting)</p>
+                  <div class="meter emerald"><span style="width: 85%"></span></div>
+                </div>
+                <div class="skill-item">
+                  <p class="skill-title"><span class="es">Bases de Datos (SQL, Modelado Relacional)</span><span class="en">Databases (SQL, Relational Modeling)</span></p>
+                  <div class="meter emerald"><span style="width: 85%"></span></div>
+                </div>
+                <div class="skill-item">
+                  <p class="skill-title"><span class="es">Patrones de Diseño & Arquitectura</span><span class="en">Design Patterns & Architecture</span></p>
+                  <div class="meter emerald"><span style="width: 75%"></span></div>
+                </div>
+                <div class="skill-item">
+                  <p class="skill-title"><span class="es">C++ & Estructuras de Datos</span><span class="en">C++ & Data Structures</span></p>
+                  <div class="meter emerald"><span style="width: 65%"></span></div>
+                </div>
+
                 <div class="break"></div>
               </div>
 
               <div class="g1">
                 <h3><span class="es">Infraestructura & DevOps</span><span class="en">Infrastructure & DevOps</span></h3>
-                <div class="meter emerald"><span style="width: 85%"><span>Windows Server & Active Directory</span></span></div>
-                <div class="meter emerald"><span style="width: 80%"><span><span class="es">Redes (VPNs, Enrutamiento, TCP/IP)</span><span class="en">Networks (VPNs, Routing, TCP/IP)</span></span></span></div>
-                <div class="meter emerald"><span style="width: 80%"><span><span class="es">Sistemas Operativos (Linux/Windows)</span><span class="en">Operating Systems (Linux/Windows)</span></span></span></div>
-                <div class="meter emerald"><span style="width: 75%"><span>Self-Hosting (NAS, CasaOS, Servers)</span></span></div>
+                
+                <div class="skill-item">
+                  <p class="skill-title">Windows Server & Active Directory</p>
+                  <div class="meter emerald"><span style="width: 85%"></span></div>
+                </div>
+                <div class="skill-item">
+                  <p class="skill-title"><span class="es">Redes (VPNs, Enrutamiento, TCP/IP)</span><span class="en">Networks (VPNs, Routing, TCP/IP)</span></p>
+                  <div class="meter emerald"><span style="width: 80%"></span></div>
+                </div>
+                <div class="skill-item">
+                  <p class="skill-title"><span class="es">Sistemas Operativos (Linux/Windows)</span><span class="en">Operating Systems (Linux/Windows)</span></p>
+                  <div class="meter emerald"><span style="width: 80%"></span></div>
+                </div>
+                <div class="skill-item">
+                  <p class="skill-title">Self-Hosting (NAS, CasaOS, Servers)</p>
+                  <div class="meter emerald"><span style="width: 75%"></span></div>
+                </div>
               </div>
 
               <div class="g2">
@@ -254,8 +273,8 @@
                 <div class="project-container" style="max-width: 100%;">
                   <div class="slideshow-container" id="slideshow1">
                     <a href="LINK_A_TU_REPO_VEHICULAR" target="_blank">
-                      <div class="mySlides1 fade"><img src="./images/proyecto1_img1.jpg" style="width:100%" alt="Spring Boot 1"></div>
-                      <div class="mySlides1 fade"><img src="./images/proyecto1_img2.jpg" style="width:100%" alt="Spring Boot 2"></div>
+                      <div class="mySlides1 fade"><img src="./images/proyecto1_img1.jpg" style="width:100%" alt="Img 1"></div>
+                      <div class="mySlides1 fade"><img src="./images/proyecto1_img2.jpg" style="width:100%" alt="Img 2"></div>
                     </a>
                     <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
@@ -266,8 +285,8 @@
                 <div class="project-container" style="max-width: 100%;">
                   <div class="slideshow-container" id="slideshow2">
                     <a href="LINK_A_TU_REPO_BOT_VIDEOS" target="_blank">
-                      <div class="mySlides2 fade"><img src="./images/proyecto2_img1.jpg" style="width:100%" alt="Python Bot 1"></div>
-                      <div class="mySlides2 fade"><img src="./images/proyecto2_img2.jpg" style="width:100%" alt="Python Bot 2"></div>
+                      <div class="mySlides2 fade"><img src="./images/proyecto2_img1.jpg" style="width:100%" alt="Img 1"></div>
+                      <div class="mySlides2 fade"><img src="./images/proyecto2_img2.jpg" style="width:100%" alt="Img 2"></div>
                     </a>
                     <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
@@ -278,8 +297,8 @@
                 <div class="project-container" style="max-width: 100%;">
                   <div class="slideshow-container" id="slideshow3">
                     <a href="LINK_A_TU_REPO_VOIP" target="_blank">
-                      <div class="mySlides3 fade"><img src="./images/proyecto3_img1.jpg" style="width:100%" alt="VoIP 1"></div>
-                      <div class="mySlides3 fade"><img src="./images/proyecto3_img2.jpg" style="width:100%" alt="VoIP 2"></div>
+                      <div class="mySlides3 fade"><img src="./images/proyecto3_img1.jpg" style="width:100%" alt="Img 1"></div>
+                      <div class="mySlides3 fade"><img src="./images/proyecto3_img2.jpg" style="width:100%" alt="Img 2"></div>
                     </a>
                     <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
@@ -290,8 +309,8 @@
                 <div class="project-container" style="max-width: 100%;">
                   <div class="slideshow-container" id="slideshow4">
                     <a href="LINK_A_TU_REPO_SISMICO" target="_blank">
-                      <div class="mySlides4 fade"><img src="./images/proyecto4_img1.jpg" style="width:100%" alt="Java 1"></div>
-                      <div class="mySlides4 fade"><img src="./images/proyecto4_img2.jpg" style="width:100%" alt="Java 2"></div>
+                      <div class="mySlides4 fade"><img src="./images/proyecto4_img1.jpg" style="width:100%" alt="Img 1"></div>
+                      <div class="mySlides4 fade"><img src="./images/proyecto4_img2.jpg" style="width:100%" alt="Img 2"></div>
                     </a>
                     <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
@@ -341,25 +360,16 @@
     </div>
   </div>
 
+  <script src="js/main.js"></script>
   <script>
-    // Lógica del Idioma
-    function setLang(lang) {
-      document.body.classList.remove('lang-es', 'lang-en');
-      document.body.classList.add('lang-' + lang);
-    }
-
-    // Lógica del Carrusel de Proyectos
     let slideIndex = [1,1,1,1];
     let slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"];
     
-    // Inicializar carruseles
     setTimeout(function() {
       showSlides(1, 0); showSlides(1, 1); showSlides(1, 2); showSlides(1, 3);
     }, 100);
 
-    function plusSlides(n, no) {
-      showSlides(slideIndex[no] += n, no);
-    }
+    function plusSlides(n, no) { showSlides(slideIndex[no] += n, no); }
 
     function showSlides(n, no) {
       let i;
@@ -367,18 +377,12 @@
       if (!x || x.length === 0) return;
       if (n > x.length) {slideIndex[no] = 1}    
       if (n < 1) {slideIndex[no] = x.length}
-      for (i = 0; i < x.length; i++) {
-         x[i].style.display = "none";  
-      }
+      for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
       x[slideIndex[no]-1].style.display = "block";  
     }
 
-    // Avance automático cada 3 segundos
     setInterval(function() {
-      plusSlides(1, 0);
-      plusSlides(1, 1);
-      plusSlides(1, 2);
-      plusSlides(1, 3);
+      plusSlides(1, 0); plusSlides(1, 1); plusSlides(1, 2); plusSlides(1, 3);
     }, 3000);
   </script>
 </body>
