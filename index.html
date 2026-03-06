@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html class="no-js" lang="es">
+<html class="no-js">
 
 <head>
-  <title> Franco Arteta | Desarrollador Backend & IT </title>
+  <title> Franco Arteta | Backend Developer </title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,10 +10,6 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
-  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-72x72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-114x114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-144x144-precomposed.png">
   <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
   <link rel="stylesheet" href="css/normalize.min.css">
@@ -24,19 +20,73 @@
   <script src="js/vendor/jquery.easytabs.min.js"></script>
   <script src="js/main.js"></script>
 
+  <style>
+    /* Ocultar el idioma inactivo */
+    .lang-en .es { display: none !important; }
+    .lang-es .en { display: none !important; }
+    
+    /* Selector de Idioma */
+    .lang-switcher {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .lang-switcher button {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: transform 0.2s;
+    }
+    .lang-switcher button:hover { transform: scale(1.2); }
+
+    /* Arreglo para textos largos en las barras de progreso */
+    .meter { height: 26px; }
+    .meter > span > span {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 10px;
+      line-height: 1.5;
+    }
+
+    /* Botón Descargar CV */
+    .btn-cv {
+      display: block;
+      background-color: #2E8B57;
+      color: white !important;
+      text-align: center;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .btn-cv:hover { background-color: #1f613c; }
+  </style>
 </head>
 
-<body class="bg-fixed bg-1">
+<body class="bg-fixed bg-1 lang-es">
+  
+  <div class="lang-switcher">
+    <button onclick="setLang('es')" title="Español">🇦🇷</button>
+    <button onclick="setLang('en')" title="English">🇺🇸</button>
+  </div>
+
   <div class="main-container">
     <div class="main wrapper clearfix">
 
       <header id="header">
         <div id="logo">
-          <h6>
-            Franco Arteta
-          </h6>
+          <h6>Franco Arteta</h6>
           <h4>
-            Desarrollador Backend / Infraestructura IT
+            <span class="es">Desarrollador Backend / Infraestructura IT</span>
+            <span class="en">Backend Developer / IT Infrastructure</span>
           </h4>
         </div>
       </header>
@@ -44,42 +94,37 @@
       <header id="header">
         <div id="helloworld">
           <h1>
-            ¡Hola, Mundo!
+            <span class="es">¡Hola, Mundo!</span>
+            <span class="en">Hello, World!</span>
           </h1>
         </div>
       </header>
 
       <div id="tab-container" class="tab-container">
-
         <ul class='etabs'>
           <li class='tab' id="tab-about">
-            <a href="#about">
-              <i class="icon-user"></i>
-              <span>Sobre Mí</span>
+            <a href="#about"><i class="icon-user"></i> 
+              <span class="es">Sobre Mí</span><span class="en">About Me</span>
             </a>
           </li>
           <li class='tab'>
-            <a href="#resume">
-              <i class="icon-file-text"></i>
-              <span>Habilidades</span>
+            <a href="#resume"><i class="icon-file-text"></i> 
+              <span class="es">Habilidades</span><span class="en">Skills</span>
             </a>
           </li>
           <li class='tab'>
-            <a href="#portfolio">
-              <i class="icon-heart"></i>
-              <span>Proyectos</span>
+            <a href="#portfolio"><i class="icon-heart"></i> 
+              <span class="es">Proyectos</span><span class="en">Projects</span>
             </a>
           </li>
           <li class='tab'>
-            <a href="#contact">
-              <i class="icon-envelope"></i>
-              <span>Contacto</span>
+            <a href="#contact"><i class="icon-envelope"></i> 
+              <span class="es">Contacto</span><span class="en">Contact</span>
             </a>
           </li>
         </ul>
 
         <div id="tab-data-wrap">
-
           <div id="about">
             <section class="clearfix">
               <div class="g2">
@@ -87,26 +132,29 @@
                   <img src="./images/my.jpg" alt="Franco Arteta">
                 </div>
                 <div class="info">
-                  <h2>
-                    <p></p>
-                    Franco Arteta
-                  </h2>
+                  <h2><p></p>Franco Arteta</h2>
                   <h4>
-                    Desarrollador Backend & Soporte IT
+                    <span class="es">Desarrollador Backend & Soporte IT</span>
+                    <span class="en">Backend Developer & IT Support</span>
                   </h4>
-                  <p>
-                    Estudiante de 4to año de Ingeniería en Sistemas orientado a la arquitectura de software y la infraestructura. Combino una sólida base en desarrollo backend (Java, Spring Boot, Python) con experiencia real en soporte corporativo, gestión de servidores y procesos logísticos. Me apasiona resolver problemas complejos, automatizar procesos y construir sistemas robustos desde los cimientos hasta el despliegue.
-                  </p>
+                  <p class="es">Estudiante de 4to año de Ingeniería en Sistemas orientado a la arquitectura de software y la infraestructura. Combino una sólida base en desarrollo backend (Java, Spring Boot, Python) con experiencia real en soporte corporativo, gestión de servidores y procesos logísticos. Me apasiona resolver problemas complejos, automatizar procesos y construir sistemas robustos desde los cimientos hasta el despliegue.</p>
+                  <p class="en">4th-year Information Systems Engineering student focused on software architecture and infrastructure. I combine a solid foundation in backend development (Java, Spring Boot, Python) with real-world experience in corporate support, server management, and logistics processes. I am passionate about solving complex problems, automating workflows, and building robust systems from the ground up to deployment.</p>
                 </div>
               </div>
 
               <div class="g1">
                 <div class="main-links sidebar">
                   <ul>
-                    <li><a href="#resume">Ver Mis Habilidades</a></li>
-                    <li><a href="#portfolio">Ver Mis Proyectos</a></li>
-                    <li><a href="#contact">Contactarme</a></li>
+                    <li><a href="#resume"><span class="es">Ver Mis Habilidades</span><span class="en">View My Skills</span></a></li>
+                    <li><a href="#portfolio"><span class="es">Ver Mis Proyectos</span><span class="en">View My Projects</span></a></li>
+                    <li><a href="#contact"><span class="es">Contactarme</span><span class="en">Contact Me</span></a></li>
                   </ul>
+                  <a href="./CV_Franco_Arteta_Spanish.pdf" target="_blank" class="btn-cv es">
+                    Descargar CV
+                  </a>
+                  <a href="./CV_Franco_Arteta_English.pdf" target="_blank" class="btn-cv en">
+                    Download CV
+                  </a>
                 </div>
               </div>
               <div class="break"></div>
@@ -117,7 +165,7 @@
                     <i class="icon-envelope"></i>
                     <div class="item-data">
                       <h3><a href="mailto:franarteta23@gmail.com">franarteta23@gmail.com</a></h3>
-                      <p>Correo Electrónico</p>
+                      <p><span class="es">Correo Electrónico</span><span class="en">Email Address</span></p>
                     </div>
                   </div>
                 </div>
@@ -125,8 +173,8 @@
                   <div class="item-box clearfix">
                     <i class="icon-linkedin"></i>
                     <div class="item-data">
-                      <h3><a href="https://linkedin.com/in/TU_USUARIO_DE_LINKEDIN" target="_blank">Perfil de LinkedIn</a></h3>
-                      <p>Conectemos</p>
+                      <h3><a href="https://www.linkedin.com/in/franco-mart%C3%ADn-arteta-42b409326/" target="_blank"><span class="es">Perfil de LinkedIn</span><span class="en">LinkedIn Profile</span></a></h3>
+                      <p><span class="es">Conectemos</span><span class="en">Let's Connect</span></p>
                     </div>
                   </div>
                 </div>
@@ -135,7 +183,7 @@
                     <i class="icon-github"></i>
                     <div class="item-data">
                       <h3><a href="https://github.com/franarteta" target="_blank">github.com/franarteta</a></h3>
-                      <p>Mis Repositorios</p>
+                      <p><span class="es">Mis Repositorios</span><span class="en">My Repositories</span></p>
                     </div>
                   </div>
                 </div>
@@ -146,30 +194,30 @@
           <div id="resume">
             <section class="clearfix">
               <div class="g2">
-                <h3>Desarrollo Backend & Arquitectura</h3>
+                <h3><span class="es">Desarrollo Backend & Arquitectura</span><span class="en">Backend Dev & Architecture</span></h3>
                 <div class="meter emerald"><span style="width: 90%"><span>Java (Spring Boot, JPA/Hibernate, Microservicios)</span></span></div>
                 <div class="meter emerald"><span style="width: 85%"><span>Python (APIs, Automatización, Scripting)</span></span></div>
-                <div class="meter emerald"><span style="width: 85%"><span>Bases de Datos (SQL, Modelado Relacional)</span></span></div>
-                <div class="meter emerald"><span style="width: 75%"><span>Patrones de Diseño & Arquitectura de Software</span></span></div>
-                <div class="meter emerald"><span style="width: 65%"><span>C++ & Estructuras de Datos</span></span></div>
+                <div class="meter emerald"><span style="width: 85%"><span><span class="es">Bases de Datos (SQL, Modelado Relacional)</span><span class="en">Databases (SQL, Relational Modeling)</span></span></span></div>
+                <div class="meter emerald"><span style="width: 75%"><span><span class="es">Patrones de Diseño & Arquitectura</span><span class="en">Design Patterns & Architecture</span></span></span></div>
+                <div class="meter emerald"><span style="width: 65%"><span><span class="es">C++ & Estructuras de Datos</span><span class="en">C++ & Data Structures</span></span></span></div>
                 <div class="break"></div>
               </div>
 
               <div class="g1">
-                <h3>Infraestructura & DevOps</h3>
+                <h3><span class="es">Infraestructura & DevOps</span><span class="en">Infrastructure & DevOps</span></h3>
                 <div class="meter emerald"><span style="width: 85%"><span>Windows Server & Active Directory</span></span></div>
-                <div class="meter emerald"><span style="width: 80%"><span>Redes (VPNs, Enrutamiento, TCP/IP)</span></span></div>
-                <div class="meter emerald"><span style="width: 80%"><span>Sistemas Operativos (Linux/Windows)</span></span></div>
-                <div class="meter emerald"><span style="width: 75%"><span>Self-Hosting (NAS, CasaOS, Servidores)</span></span></div>
+                <div class="meter emerald"><span style="width: 80%"><span><span class="es">Redes (VPNs, Enrutamiento, TCP/IP)</span><span class="en">Networks (VPNs, Routing, TCP/IP)</span></span></span></div>
+                <div class="meter emerald"><span style="width: 80%"><span><span class="es">Sistemas Operativos (Linux/Windows)</span><span class="en">Operating Systems (Linux/Windows)</span></span></span></div>
+                <div class="meter emerald"><span style="width: 75%"><span>Self-Hosting (NAS, CasaOS, Servers)</span></span></div>
               </div>
 
               <div class="g2">
-                <h3>Herramientas & Conceptos Clave</h3>
+                <h3><span class="es">Herramientas & Conceptos</span><span class="en">Tools & Core Concepts</span></h3>
                 <span class="label label-info">Git / GitHub</span>
                 <span class="label label-info">SAP (PM/MM)</span>
                 <span class="label label-info">APIs REST / OAuth2</span>
-                <span class="label label-info">Lógica de Negocios</span>
-                <span class="label label-info">Metodologías Ágiles</span>
+                <span class="label label-info"><span class="es">Lógica de Negocios</span><span class="en">Business Logic</span></span>
+                <span class="label label-info"><span class="es">Metodologías Ágiles</span><span class="en">Agile Methods</span></span>
                 <span class="label label-info">Green Software</span>
               </div>
             </section>
@@ -182,65 +230,37 @@
                 <div class="project-container" style="max-width: 100%;">
                   <div class="slideshow-container" id="slideshow1">
                     <a href="LINK_A_TU_REPO_VEHICULAR" target="_blank">
-                      <div class="mySlides1 fade">
-                        <img src="./images/proyecto1_img1.jpg" style="width:100%">
-                      </div>
-                      <div class="mySlides1 fade">
-                        <img src="./images/proyecto1_img2.jpg" style="width:100%">
-                      </div>
+                      <div class="mySlides1 fade"><img src="./images/floor.jpg" style="width:100%"></div>
                     </a>
-                    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
                   </div>
-                  <p class="project-title">Microservicios Vehiculares (Spring Boot)</p>
+                  <p class="project-title"><span class="es">Microservicios Vehiculares (Spring Boot)</span><span class="en">Vehicle Microservices (Spring Boot)</span></p>
                 </div>
 
                 <div class="project-container" style="max-width: 100%;">
                   <div class="slideshow-container" id="slideshow2">
                     <a href="LINK_A_TU_REPO_BOT_VIDEOS" target="_blank">
-                      <div class="mySlides2 fade">
-                        <img src="./images/proyecto2_img1.jpg" style="width:100%">
-                      </div>
-                      <div class="mySlides2 fade">
-                        <img src="./images/proyecto2_img2.jpg" style="width:100%">
-                      </div>
+                      <div class="mySlides2 fade"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1080&auto=format&fit=crop" style="width:100%" alt="Python API Image"></div>
                     </a>
-                    <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
                   </div>
-                  <p class="project-title">Bot de Automatización de Video (Python)</p>
+                  <p class="project-title"><span class="es">Bot de Automatización (Python)</span><span class="en">Video Automation Bot (Python)</span></p>
                 </div>
 
                 <div class="project-container" style="max-width: 100%;">
                   <div class="slideshow-container" id="slideshow3">
                     <a href="LINK_A_TU_REPO_VOIP" target="_blank">
-                      <div class="mySlides3 fade">
-                        <img src="./images/proyecto3_img1.jpg" style="width:100%">
-                      </div>
-                      <div class="mySlides3 fade">
-                        <img src="./images/proyecto3_img2.jpg" style="width:100%">
-                      </div>
+                      <div class="mySlides3 fade"><img src="./images/floor.jpg" style="width:100%"></div>
                     </a>
-                    <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
                   </div>
-                  <p class="project-title">Sistema de Alertas VoIP (Python + SQL)</p>
+                  <p class="project-title"><span class="es">Sistema de Alertas VoIP (Python + SQL)</span><span class="en">VoIP Alert System (Python + SQL)</span></p>
                 </div>
 
                 <div class="project-container" style="max-width: 100%;">
                   <div class="slideshow-container" id="slideshow4">
                     <a href="LINK_A_TU_REPO_SISMICO" target="_blank">
-                      <div class="mySlides4 fade">
-                        <img src="./images/proyecto4_img1.jpg" style="width:100%">
-                      </div>
-                      <div class="mySlides4 fade">
-                        <img src="./images/proyecto4_img2.jpg" style="width:100%">
-                      </div>
+                      <div class="mySlides4 fade"><img src="./images/floor.jpg" style="width:100%"></div>
                     </a>
-                    <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
                   </div>
-                  <p class="project-title">Gestión de Red Sísmica (Java)</p>
+                  <p class="project-title"><span class="es">Gestión de Red Sísmica (Java)</span><span class="en">Seismic Network Management (Java)</span></p>
                 </div>
 
               </div>
@@ -251,34 +271,28 @@
             <section class="clearfix">
               <div class="g1">
                 <div class="sny-icon-box">
-                  <div class="sny-icon">
-                    <i class="icon-globe"></i>
-                  </div>
+                  <div class="sny-icon"><i class="icon-globe"></i></div>
                   <div class="sny-icon-content">
-                    <h4>Ubicación</h4>
+                    <h4><span class="es">Ubicación</span><span class="en">Location</span></h4>
                     <p>Córdoba, Argentina</p>
                   </div>
                 </div>
               </div>
               <div class="g1">
                 <div class="sny-icon-box">
-                  <div class="sny-icon">
-                    <i class="icon-phone"></i>
-                  </div>
+                  <div class="sny-icon"><i class="icon-envelope"></i></div>
                   <div class="sny-icon-content">
-                    <h4>Correo Electrónico</h4>
+                    <h4><span class="es">Correo Electrónico</span><span class="en">Email</span></h4>
                     <p>franarteta23@gmail.com</p>
                   </div>
                 </div>
               </div>
               <div class="g1">
                 <div class="sny-icon-box">
-                  <div class="sny-icon">
-                    <i class="icon-user"></i>
-                  </div>
+                  <div class="sny-icon"><i class="icon-phone"></i></div>
                   <div class="sny-icon-content">
-                    <h4>Sobre Mí</h4>
-                    <p>Sistemas (UTN).<br/>Buscando oportunidades en Backend & Infraestructura.</p>
+                    <h4><span class="es">Teléfono</span><span class="en">Phone</span></h4>
+                    <p>+54 9 3516423293</p>
                   </div>
                 </div>
               </div>
@@ -288,7 +302,14 @@
 
         </div>
       </div>
+    </div>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.body.classList.remove('lang-es', 'lang-en');
+      document.body.classList.add('lang-' + lang);
+    }
+  </script>
 </body>
-
 </html>
-
