@@ -50,12 +50,13 @@ animMeter();
     });
 
 /* --- Lógica del Carrusel de Proyectos --- */
-let slideIndex = [1,1,1,1];
-let slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"]
+let slideIndex = [1,1,1,1,1];
+let slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5"]
 showSlides(1, 0);
 showSlides(1, 1);
 showSlides(1, 2);
 showSlides(1, 3);
+showSlides(1, 4);
 
 function plusSlides(n, no) {
   showSlides(slideIndex[no] += n, no);
@@ -78,4 +79,5 @@ setInterval(function() {
   plusSlides(1, 1);
   plusSlides(1, 2);
   plusSlides(1, 3);
-}, 3000);
+  plusSlides(1, 4);
+}, 6000);

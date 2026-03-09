@@ -16,7 +16,14 @@
   <link rel="stylesheet" href="css/main.css">
 
   <script>document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-  <script src="js/vendor/jquery.hashchange.min.js"></script>
+  <script>
+    // Polyfill for hashchange plugin since jQuery 1.10 has native support
+    if (!$.fn.hashchange) {
+      $.fn.hashchange = function(fn) {
+        return fn ? this.bind('hashchange', fn) : this.trigger('hashchange');
+      };
+    }
+  </script>
   <script src="js/vendor/jquery.easytabs.min.js"></script>
   
   <script>
@@ -71,7 +78,7 @@
 
     /* Carrusel de Proyectos */
     .slideshow-container { position: relative; margin: auto; overflow: hidden; border-radius: 5px 5px 0 0; }
-    .mySlides1, .mySlides2, .mySlides3, .mySlides4 { display: none; }
+    .mySlides1, .mySlides2, .mySlides3, .mySlides4, .mySlides5 { display: none; }
     .prev, .next {
       cursor: pointer; position: absolute; top: 50%; width: auto; padding: 12px; margin-top: -22px;
       color: white !important; font-weight: bold; font-size: 18px; transition: 0.6s ease;
@@ -268,13 +275,13 @@
 
           <div id="portfolio">
             <section class="clearfix">
-              <div class="project-section" style="grid-template-columns: auto auto; grid-gap: 2rem;">
+              <div class="project-section">
                 
-                <div class="project-container" style="max-width: 100%;">
+                <div class="project-container">
                   <div class="slideshow-container" id="slideshow1">
-                    <a href="LINK_A_TU_REPO_VEHICULAR" target="_blank">
-                      <div class="mySlides1 fade"><img src="./images/proyecto1_img1.jpg" style="width:100%" alt="Img 1"></div>
-                      <div class="mySlides1 fade"><img src="./images/proyecto1_img2.jpg" style="width:100%" alt="Img 2"></div>
+                    <a href="https://github.com/franarteta/microservicios-gestion-vehicular" target="_blank">
+                      <div class="mySlides1 fade"><img src="./images/proyecto1_img1.png" style="width:100%" alt="Img 1"></div>
+                      <div class="mySlides1 fade"><img src="./images/proyecto1_img2.png" style="width:100%" alt="Img 2"></div>
                     </a>
                     <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
@@ -282,11 +289,11 @@
                   <p class="project-title"><span class="es">Microservicios Vehiculares (Spring Boot)</span><span class="en">Vehicle Microservices (Spring Boot)</span></p>
                 </div>
 
-                <div class="project-container" style="max-width: 100%;">
+                <div class="project-container">
                   <div class="slideshow-container" id="slideshow2">
                     <a href="LINK_A_TU_REPO_BOT_VIDEOS" target="_blank">
-                      <div class="mySlides2 fade"><img src="./images/proyecto2_img1.jpg" style="width:100%" alt="Img 1"></div>
-                      <div class="mySlides2 fade"><img src="./images/proyecto2_img2.jpg" style="width:100%" alt="Img 2"></div>
+                      <div class="mySlides2 fade"><img src="./images/proyecto2_img1.png" style="width:100%" alt="Img 1"></div>
+                      <div class="mySlides2 fade"><img src="./images/proyecto2_img2.png" style="width:100%" alt="Img 2"></div>
                     </a>
                     <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
@@ -294,11 +301,11 @@
                   <p class="project-title"><span class="es">Bot de Automatización (Python)</span><span class="en">Video Automation Bot (Python)</span></p>
                 </div>
 
-                <div class="project-container" style="max-width: 100%;">
+                <div class="project-container">
                   <div class="slideshow-container" id="slideshow3">
-                    <a href="LINK_A_TU_REPO_VOIP" target="_blank">
-                      <div class="mySlides3 fade"><img src="./images/proyecto3_img1.jpg" style="width:100%" alt="Img 1"></div>
-                      <div class="mySlides3 fade"><img src="./images/proyecto3_img2.jpg" style="width:100%" alt="Img 2"></div>
+                    <a href="https://github.com/franarteta/sistema-alertas-voip" target="_blank">
+                      <div class="mySlides3 fade"><img src="./images/proyecto3_img1.png" style="width:100%" alt="Img 1"></div>
+                      <div class="mySlides3 fade"><img src="./images/proyecto3_img2.png" style="width:100%" alt="Img 2"></div>
                     </a>
                     <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
@@ -306,7 +313,7 @@
                   <p class="project-title"><span class="es">Sistema de Alertas VoIP (Python + SQL)</span><span class="en">VoIP Alert System (Python + SQL)</span></p>
                 </div>
 
-                <div class="project-container" style="max-width: 100%;">
+                <div class="project-container">
                   <div class="slideshow-container" id="slideshow4">
                     <a href="https://github.com/franarteta/sistema-sismos-java" target="_blank">
                       <div class="mySlides4 fade"><img src="./images/proyecto4_img1.png" style="width:100%" alt="Img 1"></div>
@@ -319,7 +326,7 @@
                   <p class="project-title"><span class="es">Gestión de Red Sísmica (Java)</span><span class="en">Seismic Network Management (Java)</span></p>
                 </div>
 
-                <div class="project-container" style="max-width: 100%;">
+                <div class="project-container">
                   <div class="slideshow-container" id="slideshow5">
                     <a href="https://github.com/franarteta/React-Proyect" target="_blank">
                       <div class="mySlides5 fade"><img src="./images/proyecto5_img1.png" style="width:100%" alt="Img 1"></div>
@@ -374,29 +381,5 @@
   </div>
 
   <script src="js/main.js"></script>
-  <script>
-    let slideIndex = [1,1,1,1];
-    let slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"];
-    
-    setTimeout(function() {
-      showSlides(1, 0); showSlides(1, 1); showSlides(1, 2); showSlides(1, 3);
-    }, 100);
-
-    function plusSlides(n, no) { showSlides(slideIndex[no] += n, no); }
-
-    function showSlides(n, no) {
-      let i;
-      let x = document.getElementsByClassName(slideId[no]);
-      if (!x || x.length === 0) return;
-      if (n > x.length) {slideIndex[no] = 1}    
-      if (n < 1) {slideIndex[no] = x.length}
-      for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
-      x[slideIndex[no]-1].style.display = "block";  
-    }
-
-    setInterval(function() {
-      plusSlides(1, 0); plusSlides(1, 1); plusSlides(1, 2); plusSlides(1, 3);
-    }, 3000);
-  </script>
 </body>
 </html>

@@ -846,13 +846,14 @@ body {
 .project-section {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 1.5rem;
+  grid-gap: 2rem;
   justify-content: center;
   align-items: center;
 }
 
 .project-container {
-  max-width: 240px;
+  max-width: 100%;
+  width: 100%;
   border-radius: 5px;
   background-color: #5cb85c;
   color: #fff;
@@ -1073,24 +1074,121 @@ FOLDING FLUID GRID
 Change widths as necessary
 ------------------------------------------- */
 
-/* SMALL TABLET */
+/* MOBILE */
 @media only screen and (max-width: 600px) {
 
-  .etabs>li span {
+  /* Tipografía */
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.5em; }
+  h3 { font-size: 1.3em; }
+  h4 { font-size: 1.1em; }
+
+  /* Layout */
+  body { width: 95%; }
+  .main { padding-top: 20px; }
+  #tab-data-wrap { padding: 15px 10px; }
+
+  /* Foto */
+  .photo {
+    float: none;
     display: block;
+    margin: 0 auto 20px;
+    height: 150px;
+    width: 150px;
   }
 
+  .info { text-align: center; }
+
+  /* Tabs */
+  .etabs {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .etabs>li span {
+    display: inline-block;
+    font-size: 12px;
+  }
+
+  .tab {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
+
+  .tab a {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  /* Proyectos */
   .project-section {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
   }
 
   .project-container {
-    max-width: 200px;
+    max-width: 100%;
+    margin: 0 auto;
   }
+
+  .slideshow-container {
+    min-height: 250px;
+  }
+
+  /* Contacto */
+  .contact-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .contact-info .g1,
+  .contact-info .sny-icon-box {
+    width: 100% !important;
+  }
+
+  /* Sobre mí y Contacto */
+  #about .g1,
+  #about .g2,
+  #contact .g1 {
+    width: 100% !important;
+    float: none;
+  }
+
+  /* Habilidades */
+  #resume .g1,
+  #resume .g2 {
+    width: 100% !important;
+    float: none;
+  }
+
+  /* Lenguaje selector */
+  .lang-switcher {
+    top: 10px;
+    left: 10px;
+    gap: 8px;
+  }
+
+  .lang-switcher img {
+    width: 28px;
+    height: 18px;
+  }
+
+  .main-links { padding-left: 0; border-left: none; }
+
+  .skill-item { margin-bottom: 15px; }
+  .btn-cv { width: 100%; margin-left: 0; margin-right: 0; }
 }
 
 /* TABLET/NETBOOK */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 601px) and (max-width: 1023px) {
+
+  /* Tipografía */
+  h1 { font-size: 3em; }
+  h2 { font-size: 2em; }
+  h3 { font-size: 1.8em; }
 
   /* Sidebar */
   .sidebar {
@@ -1100,7 +1198,6 @@ Change widths as necessary
 
   /* COLUMN GRID */
   .g1, .g2, .g3 {
-    /* display: inline; */
     float: left;
   }
 
@@ -1115,6 +1212,59 @@ Change widths as necessary
 
   .g3 {
     width: 98.0%
+  }
+
+  /* Habilidades: 2 columnas */
+  #resume section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+    align-items: start;
+  }
+
+  #resume section .g2:last-of-type {
+    grid-column: 1 / -1;
+  }
+
+  #resume section .g1,
+  #resume section .g2 {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  /* Contacto: 3 columnas */
+  #contact section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+    align-items: center;
+  }
+
+  #contact section .g1 {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  /* Foto */
+  .photo {
+    height: 180px;
+    width: 180px;
+  }
+
+  /* Proyectos */
+  .project-section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .project-container {
+    max-width: 100%;
+  }
+
+  .slideshow-container {
+    min-height: 300px;
   }
 }
 
@@ -1198,6 +1348,81 @@ Change widths as necessary
 
   .g3 {
     width: 98.0%
+  }
+
+  /* Sobre mí: 2 columnas (Foto+Bio a la izquierda, Links+CV a la derecha) */
+  #about section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
+    align-items: start;
+  }
+
+  #about section .g2 {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1.5rem;
+    align-items: start;
+  }
+
+  #about section .g1 {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  #about section .break {
+    grid-column: 1 / -1;
+  }
+
+  #about .contact-info {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+
+  #about .contact-info .g1 {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Contacto: 3 columnas */
+  #contact section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    align-items: center;
+  }
+
+  #contact section .g1 {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  /* Proyectos */
+  .project-section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .project-container {
+    max-width: 100%;
+  }
+
+  .slideshow-container {
+    min-height: 350px;
+  }
+
+  /* Foto */
+  .photo {
+    float: left;
+    height: 200px;
+    width: 200px;
   }
 }
 
@@ -1301,26 +1526,37 @@ tbody {
 .slideshow-container {
   position: relative;
   margin: auto;
+  width: 100%;
+  max-width: 100%;
+  min-height: 280px;
 }
 /* Ocultar las imágenes por defecto */
-.mySlides1, .mySlides2, .mySlides3, .mySlides4 {
+.mySlides1, .mySlides2, .mySlides3, .mySlides4, .mySlides5 {
   display: none;
+  width: 100%;
 }
+
+.mySlides1 img, .mySlides2 img, .mySlides3 img, .mySlides4 img, .mySlides5 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Botones de Anterior y Siguiente */
 .prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
+  padding: 12px 8px;
   margin-top: -22px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  background-color: rgba(0,0,0,0.3); /* Fondo semi-transparente */
+  background-color: rgba(0,0,0,0.3);
 }
 /* Posicionar el botón Siguiente a la derecha */
 .next {
@@ -1337,6 +1573,6 @@ tbody {
   animation-duration: 1.5s;
 }
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
