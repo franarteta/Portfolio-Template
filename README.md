@@ -1,40 +1,32 @@
-# Portfolio-Template
-A Portfolio/Resume website template for Programmers, Geeks, Developers, Hackers etc.
+# Portafolio - Franco Arteta
 
-### Highlights
-1. Setup is very easy and you get a portfolio template of your own for free.
-2. To add your details, you just need simple editing skills. No code changes required!
-3. Simple and Fast website User Interface.
+Bienvenido al repositorio de mi portafolio web personal. Soy estudiante de Ingeniería en Sistemas y Desarrollador Backend, con un fuerte enfoque en la arquitectura de software, infraestructura IT y automatización.
 
-### Website UI Gallary
-#### About Tab
-![About Tab](https://i.postimg.cc/WpCWc7gB/1.png)
+🔗 **Visita mi portafolio en vivo:** [https://franarteta.github.io/Portfolio-Template/](https://franarteta.github.io/Portfolio-Template/)
 
-#### Skills Tab
-![Skills Tab](https://i.postimg.cc/HL6zZ0TP/2.png)
+## 👨‍💻 Sobre Mí
+Combino una sólida base teórica y práctica en desarrollo backend con experiencia real en soporte corporativo, gestión de servidores y redes. Me apasiona resolver problemas complejos, optimizar recursos y construir sistemas robustos desde los cimientos hasta su despliegue en producción.
 
-#### Project Tab
-![Project Tab](https://i.imgur.com/u4oyV6r.png)
+## 🛠️ Tecnologías y Habilidades
 
-#### Contact Tab
-![Contact Tab](https://i.postimg.cc/Y0WxCJYJ/4.png)
+* **Desarrollo Backend:** Java (Spring Boot, JPA/Hibernate, Microservicios), Python (APIs, Automatización, Scripting, yt-dlp, PySceneDetect), SQL.
+* **Infraestructura y Redes:** Windows Server, Active Directory, Redes (Mesh, VPNs, Enrutamiento, TCP/IP), Linux/Windows.
+* **Self-Hosting & Homelab:** Proxmox, OpenMediaVault, CasaOS, configuración de servidores NAS.
+* **Herramientas:** Git/GitHub, SAP (PM/MM), metodologías ágiles.
 
-### Demo
-For Demo of this template you can visit http://0xprateek-portfolio-template.rf.gd
+## 🚀 Proyectos Destacados
 
-### Quick Start
-If you are reading this then I will assume that you know something about code and want to make a resume website of yours then this open-source project may help you setup it to showcase all your creations without effort.
-- For adding your avatar , You have to replace images/my.jpg with your square photo [Perfect size : 160 x 160].
-- For changing background image, You need to replace images/floor.jpg with your prefered background.
-- For changing rest of the information, simply open index.html and you can easily understand everything.
+A través de mi portafolio podrás explorar algunos de mis desarrollos más importantes:
+1.  **Microservicios Vehiculares:** Arquitectura basada en microservicios desarrollada con Java y Spring Boot.
+2.  **Bot de Automatización de Videos:** Script en Python que integra IA para la creación y edición automatizada de contenido.
+3.  **Sistema de Alertas VoIP:** Aplicación nativa en Python y SQL para la gestión en tiempo real de llamadas e información de contactos.
+4.  **Gestión de Red Sísmica:** Aplicación de monitoreo desarrollada en Java.
+5.  **Sistema de Gestión Empresarial:** Solución Full-Stack para la administración interna.
 
+## 📫 Contacto
 
-### Contributing
-Any and all contributions, issues, features and tips are welcome.
+Si te interesa mi trabajo, quieres colaborar o tienes alguna propuesta, no dudes en contactarme:
 
-### License
-**Portfolio-Template** is licence under [GPL v3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html)
-
-### Contact
-
-For any Suggestion / Ideas ping me at [@prateekis1](https://twitter.com/prateekis1)
+* **Email:** franarteta23@gmail.com
+* **LinkedIn:** [Franco Martín Arteta](https://www.linkedin.com/in/franco-mart%C3%ADn-arteta-42b409326/)
+* **GitHub:** [@franarteta](https://github.com/franarteta)

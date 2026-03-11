@@ -180,7 +180,7 @@ textarea {
 }
 
 legend {
-  *margin-left: -.75em
+  *margin-left: -.75em;
 }
 
 button, input, select, textarea {
